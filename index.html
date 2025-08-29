@@ -5,67 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portland Mobility Dashboard | Bhargavi G</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
     }
     header {
       background-color: #4b2e83;
       color: white;
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 1.8rem;
+      padding: 1.2rem 2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
-    main {
+    .container {
       padding: 2rem;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
-    h2 {
-      color: #333;
-    }
     .bio {
-      background: #ffffff;
-      border-left: 5px solid #4b2e83;
-      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .buttons {
       margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .buttons a {
+      display: inline-block;
+      background-color: #4b2e83;
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      margin-right: 1rem;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+    .buttons a:hover {
+      background-color: #361f63;
     }
     iframe {
+      width: 100vw;
+      height: calc(100vh - 300px);
       border: none;
-      width: 100%;
-      height: 800px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 768px) {
+      iframe {
+        height: 70vh;
+      }
     }
     footer {
       text-align: center;
-      font-size: 0.8rem;
-      margin-top: 2rem;
-      color: #888;
+      font-size: 0.9rem;
+      color: #777;
+      margin: 2rem auto;
     }
   </style>
 </head>
 <body>
   <header>🌹 Portland Mobility Dashboard</header>
-  <main>
-    <section class="bio">
+  <div class="container">
+    <div class="bio">
       <h2>👋 Hi, I'm Bhargavi G</h2>
       <p>
-        I’m a data and BI analyst passionate about civic impact. This Power BI dashboard was built using open datasets from the City of Portland 
-        to analyze traffic patterns, crash corridors, and signal infrastructure. It reflects my end-to-end BI skills — from data modeling to visualization and storytelling.
+        I'm a data and BI analyst passionate about civic impact. This dashboard was built using open datasets from the City of Portland 
+        to analyze traffic patterns, crash corridors, and signal infrastructure. It reflects my end-to-end BI skills — from modeling and wrangling in Power Query to visual storytelling in Power BI.
       </p>
-    </section>
+    </div>
 
-    <iframe title="PBOT Dashboard"
-      src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
-      allowFullScreen="true">
-    </iframe>
+    <div class="buttons">
+      <a href="https://your-resume-link.com/Bhargavi_Resume.pdf" target="_blank" download>📄 Download Resume</a>
+      <a href="https://your-dashboard-link.com/Portland_Mobility_Dashboard.pdf" target="_blank" download>📊 Download Dashboard PDF</a>
+    </div>
+  </div>
 
-    <footer>
-      Made with 💜 using Power BI + Vercel | © 2025 Bhargavi G
-    </footer>
-  </main>
+  <iframe
+    title="PBOT Dashboard"
+    src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
+    allowFullScreen="true">
+  </iframe>
+
+  <footer>
+    Built with 💜 by Bhargavi G | Hosted on Vercel | © 2025
+  </footer>
 </body>
 </html>
