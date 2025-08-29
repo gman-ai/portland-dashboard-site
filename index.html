@@ -8,8 +8,8 @@
   <meta property="og:title" content="Bhargavi G | BI Portfolio" />
   <meta property="og:description" content="Explore Power BI dashboards and resume by Bhargavi G, Business Intelligence Analyst." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/thumbnail.png" />
-  <meta property="og:url" content="https://yourdomain.vercel.app" />
+  <meta property="og:image" content="/profile.jpg" />
+  <meta property="og:url" content="https://bhargavi-analytics.vercel.app" />
   <title>Bhargavi G | BI Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -37,8 +37,17 @@
     header {
       background-color: var(--primary);
       color: var(--white);
-      padding: 1rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 1rem;
     }
 
     header h1 {
@@ -46,7 +55,7 @@
     }
 
     header p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #e0dede;
     }
 
@@ -98,10 +107,26 @@
 
     iframe {
       width: 100%;
-      height: 600px;
+      height: 700px;
       border: none;
       border-radius: 6px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .pdf-toggle {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    #pdfPreview {
+      display: none;
       margin-bottom: 2rem;
     }
 
@@ -121,6 +146,7 @@
 </head>
 <body>
   <header>
+    <img src="/profile.jpg" alt="Bhargavi G Profile Picture" class="profile-pic" />
     <h1>Bhargavi G — BI Analyst Portfolio</h1>
     <p>Data storytelling using Power BI and public datasets</p>
   </header>
@@ -137,8 +163,8 @@
         <p>This dashboard explores traffic volume, crash corridors, and infrastructure insights across Portland using the city’s Open Data Catalog. Built in Power BI, it highlights my end-to-end BI skills including Power Query transformations, DAX modeling, and data storytelling.</p>
       </div>
 
-      <h3>PDF Report Preview</h3>
-      <iframe src="/Portland_Mobility_Dashboard.pdf" title="Dashboard PDF Preview"></iframe>
+      <button class="pdf-toggle" onclick="togglePDF()">📎 Show PDF Report Preview</button>
+      <iframe id="pdfPreview" src="/Portland_Mobility_Dashboard.pdf" title="Dashboard PDF Preview"></iframe>
 
       <h3>Interactive Power BI Report</h3>
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzc2ODI5NDktMWFmMS00NzUzLWIwMzAtOGFmNDZiZmE5Y2VkIiwidCI6Ijc5ZmJlYjkxLWM1N2UtNGE1My1hNmFkLTliMTQyM2E3MjRkZSIsImMiOjZ9" title="Live Power BI Dashboard" allowfullscreen></iframe>
@@ -172,6 +198,11 @@
         document.getElementById(btn.dataset.target).classList.add('active');
       });
     });
+
+    function togglePDF() {
+      const iframe = document.getElementById('pdfPreview');
+      iframe.style.display = iframe.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 </body>
 </html>
