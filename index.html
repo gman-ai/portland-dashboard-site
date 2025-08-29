@@ -56,11 +56,23 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    .preview {
+      margin-bottom: 2rem;
+      height: 700px;
+    }
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #777;
       margin: 2rem auto;
+    }
+    @media (max-width: 768px) {
+      iframe {
+        height: 60vh;
+      }
+      .preview {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -75,6 +87,11 @@
   <div id="dashboard" class="tab-content active">
     <h2>📊 Portland Mobility Dashboard</h2>
     <p>Explore traffic patterns, crash corridors, and infrastructure insights built using Portland's Open Data and Power BI.</p>
+
+    <h3>📎 PDF Preview (No Login Required)</h3>
+    <iframe class="preview" src="https://portland-dashboard-site.vercel.app/Portland_Mobility_Dashboard.pdf"></iframe>
+
+    <h3>🔐 Interactive Power BI (Login May Be Required)</h3>
     <iframe
       title="PBOT Dashboard"
       src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
