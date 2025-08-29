@@ -21,33 +21,40 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
-    .container {
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #eee;
+      border-bottom: 2px solid #ccc;
+    }
+    .tabs button {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #333;
+    }
+    .tabs button.active {
+      background-color: #4b2e83;
+      color: white;
+      font-weight: bold;
+    }
+    .tab-content {
+      display: none;
       padding: 2rem;
       max-width: 1200px;
       margin: auto;
     }
-    .bio {
-      margin-bottom: 2rem;
-      font-size: 1rem;
-      line-height: 1.6;
+    .tab-content.active {
+      display: block;
     }
-    iframe.embed {
-      width: 100vw;
-      height: calc(100vh - 280px);
-      border: none;
-    }
-    iframe.pdf-preview {
+    iframe {
       width: 100%;
-      height: 700px;
-      margin-bottom: 3rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    h2 {
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      font-size: 1.25rem;
-      color: #4b2e83;
+      height: 80vh;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     footer {
       text-align: center;
@@ -55,43 +62,42 @@
       color: #777;
       margin: 2rem auto;
     }
-    @media (max-width: 768px) {
-      iframe.embed {
-        height: 70vh;
-      }
-      iframe.pdf-preview {
-        height: 500px;
-      }
-    }
   </style>
 </head>
 <body>
   <header>🌹 Portland Mobility Dashboard</header>
-  <div class="container">
-    <div class="bio">
-      <h2>👋 Hi, I'm Bhargavi G</h2>
-      <p>
-        I'm a data and BI analyst passionate about civic impact. This dashboard was built using open datasets from the City of Portland 
-        to analyze traffic patterns, crash corridors, and signal infrastructure. It reflects my end-to-end BI skills — from Power Query modeling to Power BI storytelling.
-      </p>
-    </div>
 
-    <h2>📄 My Resume (PDF Preview)</h2>
-    <iframe class="pdf-preview" src="https://portland-dashboard-site.vercel.app/Bhargavi_Resume.pdf"></iframe>
-
-    <h2>📊 Portland Mobility Dashboard (PDF Preview)</h2>
-    <iframe class="pdf-preview" src="https://portland-dashboard-site.vercel.app/Portland_Mobility_Dashboard.pdf"></iframe>
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab('dashboard')">📊 Dashboard</button>
+    <button class="tab-button" onclick="showTab('resume')">📄 Resume</button>
   </div>
 
-  <iframe
-    class="embed"
-    title="PBOT Dashboard"
-    src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
-    allowFullScreen="true">
-  </iframe>
+  <div id="dashboard" class="tab-content active">
+    <h2>📊 Portland Mobility Dashboard</h2>
+    <p>Explore traffic patterns, crash corridors, and infrastructure insights built using Portland's Open Data and Power BI.</p>
+    <iframe
+      title="PBOT Dashboard"
+      src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
+      allowFullScreen="true">
+    </iframe>
+  </div>
+
+  <div id="resume" class="tab-content">
+    <h2>📄 My Resume (PDF Preview)</h2>
+    <iframe src="https://portland-dashboard-site.vercel.app/Bhargavi_Resume.pdf"></iframe>
+  </div>
 
   <footer>
     Built with 💜 by Bhargavi G | Hosted on Vercel | © 2025
   </footer>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
