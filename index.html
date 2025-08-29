@@ -3,52 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portland Mobility Dashboard | Bhargavi G</title>
+  <title>Bhargavi G | BI Portfolio</title>
   <style>
     * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background-color: #f4f6f9;
-      color: #1f2937;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
     }
     header {
-      background-color: #1f2937;
+      background-color: #3f0071;
       color: white;
       padding: 1rem 2rem;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #d3d3d3;
     }
     .tabs {
       display: flex;
       justify-content: center;
+      background: #e9ecef;
+      border-bottom: 2px solid #dee2e6;
       flex-wrap: wrap;
-      background: #e5e7eb;
-      border-bottom: 2px solid #d1d5db;
     }
     .tabs button {
-      flex: 1 1 50%;
-      max-width: 200px;
       background: none;
       border: none;
-      padding: 1rem;
+      padding: 1rem 2rem;
       font-size: 1rem;
       cursor: pointer;
-      color: #1f2937;
-      transition: background 0.3s;
+      color: #343a40;
+      transition: all 0.2s;
     }
     .tabs button.active {
-      background-color: #1f2937;
+      background-color: #3f0071;
       color: white;
-      font-weight: 600;
+      font-weight: bold;
     }
     .tab-content {
       display: none;
-      padding: 2rem 1rem;
-      max-width: 1200px;
+      padding: 2rem;
+      max-width: 1100px;
       margin: auto;
     }
     .tab-content.active {
@@ -57,8 +63,8 @@
     iframe {
       width: 100%;
       border: none;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
     }
     .preview {
       margin-bottom: 2rem;
@@ -67,58 +73,67 @@
     footer {
       text-align: center;
       font-size: 0.85rem;
-      color: #6b7280;
-      padding: 2rem 1rem;
+      color: #6c757d;
+      margin: 2rem auto;
     }
-
-    /* Responsive tweaks */
+    .about-box {
+      background: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.03);
+    }
     @media (max-width: 768px) {
-      .tabs {
-        flex-direction: column;
-      }
-      .tabs button {
-        max-width: 100%;
-      }
       iframe {
-        height: 400px;
+        height: 60vh;
       }
       .preview {
-        height: 400px;
+        height: 500px;
       }
     }
   </style>
 </head>
 <body>
-  <header>Portland Mobility Dashboard</header>
+  <header>
+    Bhargavi G — BI Analyst Portfolio
+    <span>Data storytelling using public datasets & Power BI</span>
+  </header>
 
   <div class="tabs">
-    <button class="tab-button active" onclick="showTab('dashboard')">Dashboard</button>
-    <button class="tab-button" onclick="showTab('resume')">Resume</button>
+    <button class="tab-button active" onclick="showTab('dashboard')">📊 Dashboard</button>
+    <button class="tab-button" onclick="showTab('resume')">📄 Resume</button>
   </div>
 
   <div id="dashboard" class="tab-content active">
-    <h2>Portland Mobility Dashboard</h2>
-    <p>Explore traffic patterns, crash corridors, and infrastructure insights built using Portland's Open Data and Power BI.</p>
+    <div class="about-box">
+      <h2>Portland Mobility Dashboard</h2>
+      <p>This dashboard explores traffic volume, crash corridors, and infrastructure insights across Portland using the city’s Open Data Catalog. Built using Power BI and Power Query, this project highlights my end-to-end BI skills including data shaping, visualization, and civic storytelling.</p>
+    </div>
 
-    <h3>PDF Preview (No Login Required)</h3>
-    <iframe class="preview" src="https://bhargavi-analytics.vercel.app/Portland_Mobility_Dashboard.pdf"></iframe>
+    <h3>📎 PDF Preview (No Login Required)</h3>
+    <iframe class="preview" src="/Portland_Mobility_Dashboard.pdf"></iframe>
 
-    <h3>Interactive Power BI (Login May Be Required)</h3>
+    <h3>🔐 Interactive Power BI Report (Sign-in Required)</h3>
     <iframe
-      title="PBOT Dashboard"
-      height="600"
+      title="PBOT Power BI Dashboard"
+      height="650"
       src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
       allowFullScreen="true">
     </iframe>
   </div>
 
   <div id="resume" class="tab-content">
-    <h2>My Resume (PDF Preview)</h2>
-    <iframe height="700" src="https://bhargavi-analytics.vercel.app/Bhargavi_Resume.pdf"></iframe>
+    <div class="about-box">
+      <h2>My Resume</h2>
+      <p>A concise overview of my professional journey in business intelligence, including work in healthcare and civic analytics, SQL, Power BI, and stakeholder reporting.</p>
+    </div>
+
+    <iframe src="/Bhargavi_Resume.pdf" height="700"></iframe>
   </div>
 
   <footer>
-    © 2025 Bhargavi G • Hosted on Vercel • All rights reserved.
+    Designed & maintained by Bhargavi G | Hosted on Vercel | © 2025
   </footer>
 
   <script>
