@@ -3,29 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bhargavi Analytics | Portland Mobility Dashboard</title>
+  <title>Bhargavi G | BI Portfolio</title>
   <style>
     * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      font-family: "Segoe UI", Roboto, sans-serif;
-      background-color: #f7f7f7;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: #f4f6f9;
       color: #222;
     }
     header {
-      background-color: #4b2e83;
-      color: white;
+      background-color: #1f2937;
+      color: #ffffff;
       padding: 1.2rem 2rem;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.4rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .tabs {
       display: flex;
       justify-content: center;
-      background: #eee;
-      border-bottom: 2px solid #ccc;
+      background: #e5e7eb;
+      border-bottom: 2px solid #d1d5db;
     }
     .tabs button {
       background: none;
@@ -33,11 +36,15 @@
       padding: 1rem 2rem;
       font-size: 1rem;
       cursor: pointer;
-      color: #333;
+      color: #374151;
+      transition: background 0.3s;
+    }
+    .tabs button:hover {
+      background-color: #d1d5db;
     }
     .tabs button.active {
-      background-color: #4b2e83;
-      color: white;
+      background-color: #1f2937;
+      color: #ffffff;
       font-weight: bold;
     }
     .tab-content {
@@ -53,8 +60,8 @@
       width: 100%;
       height: 80vh;
       border: none;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
     }
     .preview {
       margin-bottom: 2rem;
@@ -62,8 +69,8 @@
     }
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #777;
+      font-size: 0.85rem;
+      color: #6b7280;
       margin: 2rem auto;
     }
     @media (max-width: 768px) {
@@ -77,21 +84,23 @@
   </style>
 </head>
 <body>
-  <header>🌸 Bhargavi Analytics – Portland Mobility Dashboard</header>
+  <header>
+    <span>Bhargavi G | Business Intelligence Portfolio</span>
+  </header>
 
   <div class="tabs">
-    <button class="tab-button active" onclick="showTab('dashboard')">📊 Dashboard</button>
-    <button class="tab-button" onclick="showTab('resume')">📄 Resume</button>
+    <button class="tab-button active" onclick="showTab('dashboard')">Dashboard</button>
+    <button class="tab-button" onclick="showTab('resume')">Resume</button>
   </div>
 
   <div id="dashboard" class="tab-content active">
-    <h2>📊 Portland Mobility Dashboard</h2>
+    <h2>Portland Mobility Dashboard</h2>
     <p>Explore traffic patterns, crash corridors, and infrastructure insights built using Portland's Open Data and Power BI.</p>
 
-    <h3>📎 PDF Preview (No Login Required)</h3>
+    <h3>PDF Preview (No Login Required)</h3>
     <iframe class="preview" src="https://bhargavi-analytics.vercel.app/Portland_Mobility_Dashboard.pdf"></iframe>
 
-    <h3>🔐 Interactive Power BI (Login May Be Required)</h3>
+    <h3>Interactive Power BI (Login May Be Required)</h3>
     <iframe
       title="PBOT Dashboard"
       src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
@@ -100,12 +109,12 @@
   </div>
 
   <div id="resume" class="tab-content">
-    <h2>📄 My Resume (PDF Preview)</h2>
+    <h2>My Resume (PDF Preview)</h2>
     <iframe src="https://bhargavi-analytics.vercel.app/Bhargavi_Resume.pdf"></iframe>
   </div>
 
   <footer>
-    Built with 💜 by Bhargavi G | Hosted on Vercel | © 2025
+    © 2025 Bhargavi G — All rights reserved | Hosted on Vercel
   </footer>
 
   <script>
