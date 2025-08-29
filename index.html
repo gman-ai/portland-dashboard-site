@@ -27,42 +27,41 @@
       margin: auto;
     }
     .bio {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       font-size: 1rem;
       line-height: 1.6;
     }
-    .buttons {
-      margin-bottom: 2rem;
-    }
-    .buttons a {
-      display: inline-block;
-      background-color: #4b2e83;
-      color: white;
-      text-decoration: none;
-      padding: 0.6rem 1.2rem;
-      margin-right: 1rem;
-      border-radius: 5px;
-      font-size: 0.95rem;
-      transition: background-color 0.2s ease;
-    }
-    .buttons a:hover {
-      background-color: #361f63;
-    }
-    iframe {
+    iframe.embed {
       width: 100vw;
-      height: calc(100vh - 300px);
+      height: calc(100vh - 280px);
       border: none;
     }
-    @media (max-width: 768px) {
-      iframe {
-        height: 70vh;
-      }
+    iframe.pdf-preview {
+      width: 100%;
+      height: 700px;
+      margin-bottom: 3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: #4b2e83;
     }
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #777;
       margin: 2rem auto;
+    }
+    @media (max-width: 768px) {
+      iframe.embed {
+        height: 70vh;
+      }
+      iframe.pdf-preview {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -73,17 +72,19 @@
       <h2>👋 Hi, I'm Bhargavi G</h2>
       <p>
         I'm a data and BI analyst passionate about civic impact. This dashboard was built using open datasets from the City of Portland 
-        to analyze traffic patterns, crash corridors, and signal infrastructure. It reflects my end-to-end BI skills — from modeling and wrangling in Power Query to visual storytelling in Power BI.
+        to analyze traffic patterns, crash corridors, and signal infrastructure. It reflects my end-to-end BI skills — from Power Query modeling to Power BI storytelling.
       </p>
     </div>
 
-    <div class="buttons">
-      <a href="https://portland-dashboard-site.vercel.app/Portland_Mobility_Dashboard.pdf" target="_blank" download>📄 Download Resume</a>
-      <a href="https://portland-dashboard-site.vercel.app/Bhargavi_Resume.pdf" target="_blank" download>📊 Download Dashboard PDF</a>
-    </div>
+    <h2>📄 My Resume (PDF Preview)</h2>
+    <iframe class="pdf-preview" src="https://portland-dashboard-site.vercel.app/Bhargavi_Resume.pdf"></iframe>
+
+    <h2>📊 Portland Mobility Dashboard (PDF Preview)</h2>
+    <iframe class="pdf-preview" src="https://portland-dashboard-site.vercel.app/Portland_Mobility_Dashboard.pdf"></iframe>
   </div>
 
   <iframe
+    class="embed"
     title="PBOT Dashboard"
     src="https://app.powerbi.com/reportEmbed?reportId=dc744787-26d6-4d07-ad6e-82411051a6ae&autoAuth=true&ctid=3c71cbab-b5ed-4f3b-ac0d-95509d6c0e93"
     allowFullScreen="true">
