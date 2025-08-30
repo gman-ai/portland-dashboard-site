@@ -20,27 +20,23 @@
       --bg: #f8f9fa;
       --white: #ffffff;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-
     header {
       background-color: var(--primary);
       color: var(--white);
       padding: 2rem 1rem;
       text-align: center;
     }
-
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -49,16 +45,13 @@
       border: 3px solid white;
       margin-bottom: 1rem;
     }
-
     header h1 {
       font-size: 1.75rem;
     }
-
     header p {
       font-size: 0.95rem;
       color: #e0dede;
     }
-
     nav {
       display: flex;
       justify-content: center;
@@ -67,7 +60,6 @@
       background-color: #e9ecef;
       padding: 0.75rem 1rem;
     }
-
     nav button {
       background: none;
       border: none;
@@ -78,24 +70,20 @@
       border-radius: 5px;
       transition: 0.2s;
     }
-
     nav button.active,
     nav button:hover {
       background-color: var(--primary);
       color: var(--white);
     }
-
     .tab-section {
       max-width: 1100px;
       margin: 2rem auto;
       padding: 0 1rem;
       display: none;
     }
-
     .tab-section.active {
       display: block;
     }
-
     .card {
       background-color: var(--white);
       border: 1px solid #dee2e6;
@@ -104,7 +92,6 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.04);
       margin-bottom: 2rem;
     }
-
     iframe {
       width: 100%;
       height: 700px;
@@ -113,7 +100,6 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       margin-bottom: 2rem;
     }
-
     .pdf-toggle {
       display: inline-block;
       padding: 0.5rem 1rem;
@@ -124,19 +110,16 @@
       cursor: pointer;
       margin-bottom: 1rem;
     }
-
     #pdfPreview {
       display: none;
       margin-bottom: 2rem;
     }
-
     footer {
       text-align: center;
       font-size: 0.85rem;
       color: var(--muted);
       padding: 2rem 1rem;
     }
-
     @media (max-width: 768px) {
       iframe {
         height: 400px;
@@ -148,32 +131,33 @@
   <header>
     <img src="/profile.png" alt="Bhargavi G Profile Picture" class="profile-pic" />
     <h1>Bhargavi G — BI Analyst Portfolio</h1>
-    <p>Data storytelling using Power BI and public datasets</p>
+    <p>City-facing dashboards powered by Power BI, GIS data, and public infrastructure insights</p>
   </header>
 
   <nav>
-    <button class="tab-btn active" data-target="dashboard">Dashboard</button>
+    <button class="tab-btn active" data-target="dashboard">Asset Dashboard</button>
     <button class="tab-btn" data-target="resume">Resume</button>
   </nav>
 
   <main>
     <section id="dashboard" class="tab-section active">
       <div class="card">
-        <h2>Portland Mobility Dashboard</h2>
-        <p>This dashboard explores traffic volume, crash corridors, and infrastructure insights across Portland using the city’s Open Data Catalog. Built in Power BI, it highlights my end-to-end BI skills including Power Query transformations, DAX modeling, and data storytelling.</p>
+        <h2>Portland Asset Management Dashboard</h2>
+        <p>This project simulates a Maximo-style asset analytics tool using PBOT’s public sign inventory (191K+ records). It visualizes maintenance risk, ownership, inspections, and lifecycle indicators for infrastructure signs across Portland.</p>
+        <p><strong>Disclaimer:</strong> This is a portfolio simulation based on open data. Not affiliated with or endorsed by the City of Portland.</p>
       </div>
 
       <button class="pdf-toggle" onclick="togglePDF()">📎 Show PDF Report Preview</button>
-      <iframe id="pdfPreview" src="/Portland_Mobility_Dashboard.pdf" title="Dashboard PDF Preview"></iframe>
+      <iframe id="pdfPreview" src="/Portland Asset Management Dashboard.pdf" title="Asset PDF Preview"></iframe>
 
       <h3>Interactive Power BI Report</h3>
-      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzc2ODI5NDktMWFmMS00NzUzLWIwMzAtOGFmNDZiZmE5Y2VkIiwidCI6Ijc5ZmJlYjkxLWM1N2UtNGE1My1hNmFkLTliMTQyM2E3MjRkZSIsImMiOjZ9" title="Live Power BI Dashboard" allowfullscreen></iframe>
+      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjdjZmJkNGUtMTA0MS00ODQ4LWIzZWMtNTM5YjgwZWQzZDJlIiwidCI6Ijc5ZmJlYjkxLWM1N2UtNGE1My1hNmFkLTliMTQyM2E3MjRkZSIsImMiOjZ9" title="Live Asset Power BI Dashboard" allowfullscreen></iframe>
     </section>
 
     <section id="resume" class="tab-section">
       <div class="card">
         <h2>Resume</h2>
-        <p>Explore my background in BI development, healthcare analytics, and dashboard design. This PDF resume includes work history, education, tools (Power BI, SQL, Excel), and major projects.</p>
+        <p>Explore my background in BI development, civic and healthcare analytics, and Maximo-aligned dashboard design. This PDF resume includes work history, education, tools (Power BI, SQL, Excel), and featured projects.</p>
         <p><a href="/Bhargavi_Resume.pdf" target="_blank" rel="noopener noreferrer">📥 Download Resume (PDF)</a></p>
       </div>
 
