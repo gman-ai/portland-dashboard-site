@@ -110,7 +110,7 @@
       cursor: pointer;
       margin-bottom: 1rem;
     }
-    #pdfPreview {
+    #pdfPreview, #pdfMobilityPreview {
       display: none;
       margin-bottom: 2rem;
     }
@@ -136,6 +136,7 @@
 
   <nav>
     <button class="tab-btn active" data-target="dashboard">Asset Dashboard</button>
+    <button class="tab-btn" data-target="mobility">Mobility Dashboard</button>
     <button class="tab-btn" data-target="resume">Resume</button>
   </nav>
 
@@ -147,11 +148,24 @@
         <p><strong>Disclaimer:</strong> This is a portfolio simulation based on open data. Not affiliated with or endorsed by the City of Portland.</p>
       </div>
 
-      <button class="pdf-toggle" onclick="togglePDF()">📎 Show PDF Report Preview</button>
+      <button class="pdf-toggle" onclick="togglePDF('pdfPreview')">📎 Show PDF Report Preview</button>
       <iframe id="pdfPreview" src="/Portland Asset Management Dashboard.pdf" title="Asset PDF Preview"></iframe>
 
       <h3>Interactive Power BI Report</h3>
       <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYjdjZmJkNGUtMTA0MS00ODQ4LWIzZWMtNTM5YjgwZWQzZDJlIiwidCI6Ijc5ZmJlYjkxLWM1N2UtNGE1My1hNmFkLTliMTQyM2E3MjRkZSIsImMiOjZ9" title="Live Asset Power BI Dashboard" allowfullscreen></iframe>
+    </section>
+
+    <section id="mobility" class="tab-section">
+      <div class="card">
+        <h2>Portland Mobility Dashboard</h2>
+        <p>This dashboard explores traffic volume, crash corridors, and infrastructure insights across Portland using the city’s Open Data Catalog. Built in Power BI, it highlights my end-to-end BI skills including Power Query transformations, DAX modeling, and data storytelling.</p>
+      </div>
+
+      <button class="pdf-toggle" onclick="togglePDF('pdfMobilityPreview')">📎 Show PDF Report Preview</button>
+      <iframe id="pdfMobilityPreview" src="/Portland_Mobility_Dashboard.pdf" title="Mobility PDF Preview"></iframe>
+
+      <h3>Interactive Power BI Report</h3>
+      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMzc2ODI5NDktMWFmMS00NzUzLWIwMzAtOGFmNDZiZmE5Y2VkIiwidCI6Ijc5ZmJlYjkxLWM1N2UtNGE1My1hNmFkLTliMTQyM2E3MjRkZSIsImMiOjZ9" title="Live Mobility Power BI Dashboard" allowfullscreen></iframe>
     </section>
 
     <section id="resume" class="tab-section">
@@ -183,8 +197,8 @@
       });
     });
 
-    function togglePDF() {
-      const iframe = document.getElementById('pdfPreview');
+    function togglePDF(id) {
+      const iframe = document.getElementById(id);
       iframe.style.display = iframe.style.display === 'block' ? 'none' : 'block';
     }
   </script>
